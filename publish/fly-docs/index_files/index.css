@@ -1,0 +1,16 @@
+html {
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background: #fafafa;
+}

@@ -17,10 +17,10 @@
     "ext-json": "*",
     "ext-sodium": "*",
     "friendsofhyperf/telescope": "~3.1.0",
-    "hyperf/database-pgsql": "~3.1.0",
     "hyperf/cache": "~3.1.0",
     "hyperf/command": "~3.1.0",
     "hyperf/config": "~3.1.0",
+    "hyperf/database-pgsql": "~3.1.0",
     "hyperf/db-connection": "~3.1.0",
     "hyperf/engine": "^2.10",
     "hyperf/framework": "~3.1.0",
@@ -30,6 +30,7 @@
     "hyperf/logger": "~3.1.0",
     "hyperf/memory": "~3.1.0",
     "hyperf/process": "~3.1.0",
+    "hyperf/redis": "^3.1",
     "on1kel/hyperf-lighty": "^1.0"
   },
   "require-dev": {
@@ -38,7 +39,8 @@
     "doctrine/dbal": "^3.6",
     "friendsofhyperf/ide-helper": "^3.1",
     "symfony/var-dumper": "^7.3",
-    "hyperf/testing": "~3.1.0"
+    "hyperf/testing": "~3.1.0",
+    "hyperf/devtool": "~3.1.0"
   },
   "autoload": {
     "psr-4": {
