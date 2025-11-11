@@ -1,0 +1,17 @@
+{
+  "name": "on1kel",
+  "build": {
+    "context": "..",
+    "dockerfile": "./Dockerfile",
+    "args": {
+      "timezone": "Europe/Moscow"
+    }
+  },
+  "forwardPorts": [
+    9501
+  ],
+  "runArgs": [
+    "--network", "project-databases-network",
+    "--init"
+  ]
+}

@@ -1,0 +1,38 @@
+networks:
+  project-databases-network:
+    name: project-databases-network
+    driver: bridge
+
+volumes:
+  project-redis-volume:
+  project-postgres-database-volume:
+
+x-common-variables: &common-variables
+  SOME_ENV: "Some value"
+
+services:
+  redis:
+    image: redis/redis-stack:7.4.0-v8-x86_64
+    container_name: project-redis
+    restart: always
+    ports: [ "6379:6379", "8001:8001" ]
+    environment:
+      REDIS_ARGS: "--requirepass project"
+    volumes:
+      - project-redis-volume:/data
+    networks:
+      - project-databases-network
+
+  postgres:
+    image: postgres:18.0-alpine
+    container_name: project-postgres
+    restart: always
+    ports: [ "5432:5432" ]
+    environment:
+      POSTGRES_DB: project
+      POSTGRES_USER: project
+      POSTGRES_PASSWORD: project
+    volumes:
+      - project-postgres-database-volume:/var/lib/postgresql/data
+    networks:
+      - project-databases-network
