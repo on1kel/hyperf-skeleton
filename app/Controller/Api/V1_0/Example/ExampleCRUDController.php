@@ -37,7 +37,7 @@ use ReflectionException;
 use Spatie\DataTransferObject\Exceptions\UnknownProperties;
 use Throwable;
 
-#[Controller(prefix: 'api/V1_0/examples')]
+#[Controller(prefix: 'api/v1.0/examples')]
 final class ExampleCRUDController extends ApiCRUDController
 {
     use WithDBTransaction;
