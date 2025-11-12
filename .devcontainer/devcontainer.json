@@ -8,10 +8,14 @@
     }
   },
   "forwardPorts": [
-    9501
+    9501,9003
   ],
   "runArgs": [
     "--network", "project-databases-network",
     "--init"
-  ]
+  ],
+  "containerEnv": {
+    "XDEBUG_MODE": "debug,develop",          // можно выключать: off
+    "XDEBUG_CONFIG": "client_port=9003"
+  }
 }
