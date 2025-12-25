@@ -10,10 +10,10 @@ RUN set -eux; \
       tar wget gzip git openssh-server \
       libpq-dev postgresql-client \
       libpng-dev libjpeg62-turbo-dev libfreetype6-dev libwebp-dev \
-      libzip-dev unzip zip \
+      libzip-dev unzip zip librdkafka-dev\
       $PHPIZE_DEPS; \
-    docker-php-ext-install pcntl; \
-    docker-php-ext-enable pcntl; \
+    docker-php-ext-install pcntl bcmath; \
+    docker-php-ext-enable pcntl bcmath; \
     docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp; \
     docker-php-ext-install -j"$(nproc)" pdo_pgsql pgsql exif gd zip; \
     docker-php-ext-enable pdo_pgsql pgsql exif gd zip
@@ -21,7 +21,8 @@ RUN set -eux; \
 # Xdebug через PECL (нужны $PHPIZE_DEPS)
 RUN set -eux; \
     pecl install -o -f xdebug; \
-    docker-php-ext-enable xdebug
+    pecl install -o -f rdkafka-6.0.3; \
+    docker-php-ext-enable xdebug rdkafka
 
 # Только настройки Xdebug, без zend_extension
 RUN set -eux; \
