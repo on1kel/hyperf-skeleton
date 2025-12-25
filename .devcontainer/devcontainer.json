@@ -11,7 +11,7 @@
     9501,9003
   ],
   "runArgs": [
-    "--network", "project-databases-network",
+//    "--network", "project-databases-network",
     "--init"
   ],
   "containerEnv": {

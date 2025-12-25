@@ -9,9 +9,8 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-
-use Hyperf\Database\Commands\Migrations\MigrateCommand;
-
 return [
-    MigrateCommand::class
+    'locale' => 'ru',
+    'fallback_locale' => 'ru',
+    'path' => BASE_PATH . '/storage/languages',
 ];

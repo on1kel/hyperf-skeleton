@@ -10,4 +10,5 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 return [
+    \Hyperf\Contract\StdoutLoggerInterface::class => \On1kel\HyperfLighty\Logger\StdoutLoggerFactory::class,
 ];
