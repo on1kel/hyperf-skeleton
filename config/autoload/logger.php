@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use On1kel\HyperfLighty\Logger\Formater\AnsiLineFormatter;
+use function Hyperf\Support\env;
 
 $appEnv = env('APP_ENV', 'dev');
 
